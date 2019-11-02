@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://wsdl.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://wsdl.com" xmlns:intf="http://wsdl.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://wsdl.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllFilms">
+    <complexType/>
+   </element>
+   <element name="getAllFilmsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllFilmsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchFilm">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchFilmResponse">
+    <complexType>
+     <sequence>
+      <element name="searchFilmReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllFilmsRequest">
+
+      <wsdl:part element="impl:getAllFilms" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchFilmRequest">
+
+      <wsdl:part element="impl:searchFilm" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchFilmResponse">
+
+      <wsdl:part element="impl:searchFilmResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllFilmsResponse">
+
+      <wsdl:part element="impl:getAllFilmsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WsdlClass">
+
+      <wsdl:operation name="getAllFilms">
+
+         <wsdl:input message="impl:getAllFilmsRequest" name="getAllFilmsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllFilmsResponse" name="getAllFilmsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchFilm">
+
+         <wsdl:input message="impl:searchFilmRequest" name="searchFilmRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchFilmResponse" name="searchFilmResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WsdlClassSoapBinding" type="impl:WsdlClass">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllFilms">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllFilmsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllFilmsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchFilm">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchFilmRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchFilmResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WsdlClassService">
+
+      <wsdl:port binding="impl:WsdlClassSoapBinding" name="WsdlClass">
+
+         <wsdlsoap:address location="http://localhost:8081/EnterpriseAssignmentNoman/services/WsdlClass"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
